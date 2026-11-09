@@ -13,46 +13,45 @@
   ================================================================
 */
 
-const currentBuilds = [
+const currentBuilds = [];
+
+const completedBuilds = [
   {
     "src": "images/oct26-01-blue-angle.jpg",
-    "alt": "Ryzen 5 3600 / RX 5700 XT, blue lighting, angled view"
+    "alt": "Ryzen 5 3600 / RX 5700 XT, blue lighting, angled view — previously sold"
   },
   {
     "src": "images/oct26-01-blue-front.jpg",
-    "alt": "Ryzen 5 3600 / RX 5700 XT, blue lighting, front view"
+    "alt": "Ryzen 5 3600 / RX 5700 XT, blue lighting, front view — previously sold"
   },
   {
     "src": "images/oct26-01-blue-close.jpg",
-    "alt": "Ryzen 5 3600 / RX 5700 XT, blue lighting, close-up of the cooler and graphics card"
+    "alt": "Ryzen 5 3600 / RX 5700 XT, blue lighting, close-up of the cooler and graphics card — previously sold"
   },
   {
     "src": "images/oct26-01-red-angle.jpg",
-    "alt": "Ryzen 5 3600 / RX 5700 XT, red lighting, angled view"
+    "alt": "Ryzen 5 3600 / RX 5700 XT, red lighting, angled view — previously sold"
   },
   {
     "src": "images/oct26-01-red-front.jpg",
-    "alt": "Ryzen 5 3600 / RX 5700 XT, red lighting, front view"
+    "alt": "Ryzen 5 3600 / RX 5700 XT, red lighting, front view — previously sold"
   },
   {
     "src": "images/oct26-01-red-close.jpg",
-    "alt": "Ryzen 5 3600 / RX 5700 XT, red lighting, close-up of the cooler and graphics card"
+    "alt": "Ryzen 5 3600 / RX 5700 XT, red lighting, close-up of the cooler and graphics card — previously sold"
   },
   {
     "src": "images/oct26-01-green-angle.jpg",
-    "alt": "Ryzen 5 3600 / RX 5700 XT, green lighting, angled view"
+    "alt": "Ryzen 5 3600 / RX 5700 XT, green lighting, angled view — previously sold"
   },
   {
     "src": "images/oct26-01-green-front.jpg",
-    "alt": "Ryzen 5 3600 / RX 5700 XT, green lighting, front view"
+    "alt": "Ryzen 5 3600 / RX 5700 XT, green lighting, front view — previously sold"
   },
   {
     "src": "images/oct26-01-green-close.jpg",
-    "alt": "Ryzen 5 3600 / RX 5700 XT, green lighting, close-up of the cooler and graphics card"
-  }
-];
-
-const completedBuilds = [
+    "alt": "Ryzen 5 3600 / RX 5700 XT, green lighting, close-up of the cooler and graphics card — previously sold"
+  },
   {
     "src": "images/5500_5700XT.jpg",
     "alt": "Ryzen 5 5500 / RX 5700 XT build — previously sold"

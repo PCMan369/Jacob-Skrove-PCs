@@ -18,7 +18,7 @@ const builds = [
   {
     "id": "oct26-01",
     "title": "Ryzen 5 3600 / RX 5700 XT",
-    "status": "available",
+    "status": "sold",
     "price": "$650",
     "eventId": null,
     "eventPrice": null,
