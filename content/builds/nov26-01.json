@@ -7,12 +7,24 @@
   "images": [
     "/images/img0511.jpeg",
     "/images/img0504.jpeg",
-    "/images/img0510.jpg"
+    "/images/img0510.jpg",
+    "/images/img0513.jpeg",
+    "/images/img0512.jpeg",
+    "/images/img0514.jpeg",
+    "/images/img0515.jpeg",
+    "/images/img0517.jpeg"
   ],
   "components": {
     "cpu": "Ryzen 5 2600X",
     "gpu": "GTX 1660 TI",
-    "motherboard": "B450 mATX"
+    "motherboard": "B450 mATX",
+    "ram": "2x8GB 3200MHz",
+    "storage": "500GB SATA SSD",
+    "psu": "80+ Gold 650w",
+    "case": "Okinos Aqua Uno",
+    "accessories": [
+      "WiFi and Bluetooth dongle"
+    ]
   },
   "performance": {
     "isEstimate": true
