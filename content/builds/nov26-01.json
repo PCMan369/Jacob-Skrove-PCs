@@ -1,7 +1,7 @@
 {
   "id": "nov26-01",
   "title": "Ryzen 5 2600X / GTX 1660 TI",
-  "status": "draft",
+  "status": "available",
   "listedDate": "2026-11-15",
   "summary": "Cleaned and stress tested 1080p gaming PC.",
   "images": [
@@ -29,5 +29,6 @@
   "performance": {
     "isEstimate": true
   },
-  "condition": "Good condition. Everything is used except the case and power supply, which are new."
+  "condition": "Good condition. Everything is used except the case and power supply, which are new.",
+  "price": 550
 }
