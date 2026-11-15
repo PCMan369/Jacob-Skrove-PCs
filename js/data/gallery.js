@@ -13,7 +13,40 @@
   ================================================================
 */
 
-const currentBuilds = [];
+const currentBuilds = [
+  {
+    "src": "images/img0511.jpg",
+    "alt": "Ryzen 5 2600X / GTX 1660 TI, photo 1"
+  },
+  {
+    "src": "images/img0504.jpg",
+    "alt": "Ryzen 5 2600X / GTX 1660 TI, photo 2"
+  },
+  {
+    "src": "images/img0510.jpg",
+    "alt": "Ryzen 5 2600X / GTX 1660 TI, photo 3"
+  },
+  {
+    "src": "images/img0513.jpg",
+    "alt": "Ryzen 5 2600X / GTX 1660 TI, photo 4"
+  },
+  {
+    "src": "images/img0512.jpg",
+    "alt": "Ryzen 5 2600X / GTX 1660 TI, photo 5"
+  },
+  {
+    "src": "images/img0514.jpg",
+    "alt": "Ryzen 5 2600X / GTX 1660 TI, photo 6"
+  },
+  {
+    "src": "images/img0515.jpg",
+    "alt": "Ryzen 5 2600X / GTX 1660 TI, photo 7"
+  },
+  {
+    "src": "images/img0517.jpg",
+    "alt": "Ryzen 5 2600X / GTX 1660 TI, photo 8"
+  }
+];
 
 const completedBuilds = [
   {

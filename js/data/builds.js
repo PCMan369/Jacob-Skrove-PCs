@@ -16,6 +16,58 @@
 
 const builds = [
   {
+    "id": "nov26-01",
+    "title": "Ryzen 5 2600X / GTX 1660 TI",
+    "status": "available",
+    "price": "$550",
+    "eventId": null,
+    "eventPrice": null,
+    "summary": "Cleaned and stress tested 1080p gaming PC.",
+    "components": {
+      "cpu": {
+        "model": "Ryzen 5 2600X"
+      },
+      "gpu": {
+        "model": "GTX 1660 TI"
+      },
+      "motherboard": {
+        "model": "B450 mATX"
+      },
+      "ram": {
+        "model": "2x8GB 3200MHz"
+      },
+      "storage": {
+        "model": "500GB SATA SSD"
+      },
+      "psu": {
+        "model": "80+ Gold 650w"
+      },
+      "case": {
+        "model": "Okinos Aqua Uno"
+      },
+      "accessories": [
+        "WiFi and Bluetooth dongle"
+      ]
+    },
+    "media": {
+      "images": [
+        "images/img0511.jpg",
+        "images/img0504.jpg",
+        "images/img0510.jpg",
+        "images/img0513.jpg",
+        "images/img0512.jpg",
+        "images/img0514.jpg",
+        "images/img0515.jpg",
+        "images/img0517.jpg"
+      ],
+      "videos": []
+    },
+    "condition": "Good condition. Everything is used except the case and power supply, which are new.",
+    "testingNotes": "",
+    "listedDate": "2026-11-15",
+    "notes": ""
+  },
+  {
     "id": "oct26-01",
     "title": "Ryzen 5 3600 / RX 5700 XT",
     "status": "sold",

@@ -5,14 +5,14 @@
   "listedDate": "2026-11-15",
   "summary": "Cleaned and stress tested 1080p gaming PC.",
   "images": [
-    "/images/img0511.jpeg",
-    "/images/img0504.jpeg",
+    "/images/img0511.jpg",
+    "/images/img0504.jpg",
     "/images/img0510.jpg",
-    "/images/img0513.jpeg",
-    "/images/img0512.jpeg",
-    "/images/img0514.jpeg",
-    "/images/img0515.jpeg",
-    "/images/img0517.jpeg"
+    "/images/img0513.jpg",
+    "/images/img0512.jpg",
+    "/images/img0514.jpg",
+    "/images/img0515.jpg",
+    "/images/img0517.jpg"
   ],
   "components": {
     "cpu": "Ryzen 5 2600X",
