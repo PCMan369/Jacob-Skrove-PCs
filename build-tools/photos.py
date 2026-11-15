@@ -8,8 +8,13 @@ For each photo that needs it, this:
   - removes ALL hidden data (GPS location, camera details, colour profile),
     converting colours to sRGB first so they don't shift,
   - shrinks it so the longest side is at most 2000 pixels,
-  - saves it as a JPEG (PNG/WebP/HEIC are converted and renamed to .jpg, and
-    the listing files are updated to the new name).
+  - saves it as a JPEG. A JPEG (including an iPhone photo, which Pillow calls
+    "MPO") keeps its name, .jpg or .jpeg: the admin has already written that
+    name into the listing. PNG/WebP/HEIC are converted and renamed to .jpg, and
+    the listing files are updated to the new name.
+  - repairs a listing that names a photo by an extension the file no longer has
+    (images/a.jpeg in the listing, images/a.jpg on disk) when exactly one
+    same-named photo exists; with none or two it does not guess.
 
 A photo that is already clean (JPEG, no hidden data, 2000 px or smaller,
 under 1.5 MB) is left completely untouched, so running this repeatedly
@@ -51,6 +56,7 @@ ROOT = Path(__file__).resolve().parent.parent
 IMAGES = ROOT / "images"
 CONTENT_FILES = [ROOT / "content" / "photo-alts.json", ROOT / "content" / "gallery-extras.json", ROOT / "content" / "part-boxes.json"]
 PHOTO_EXTS = {".jpg", ".jpeg", ".png", ".webp", ".heic", ".heif"}
+JPEG_FORMATS = {"JPEG", "MPO"}      # iPhone photos open as MPO: a JPEG with extra pictures inside
 MAX_EDGE = 2000
 QUALITY = 85
 MAX_BYTES = 1_500_000
@@ -60,8 +66,10 @@ METADATA_KEYS = ("exif", "icc_profile", "xmp", "XML:com.adobe.xmp", "photoshop",
 def why_it_needs_work(path, img):
     """Return a list of reasons (empty = already clean)."""
     reasons = []
-    if img.format != "JPEG":
+    if img.format not in JPEG_FORMATS:
         reasons.append("convert {} to JPEG".format(img.format or "unknown format"))
+    elif img.format == "MPO":
+        reasons.append("save as a plain JPEG (drops the extra pictures inside)")
     if len(img.getexif()) or any(k in img.info for k in METADATA_KEYS):
         reasons.append("remove hidden data (location, camera, colour profile)")
     if max(img.size) > MAX_EDGE:
@@ -103,9 +111,55 @@ def unique_target(src):
     return target
 
 
+def content_files():
+    return sorted((ROOT / "content" / "builds").glob("*.json")) + CONTENT_FILES
+
+
+def photo_refs():
+    """Every photo path written in the content files, as images/<name> (leading './' or '/' dropped)."""
+    refs = set()
+
+    def walk(node):
+        if isinstance(node, str):
+            p = node
+            while p.startswith("./"):
+                p = p[2:]
+            p = p.lstrip("/")
+            if p.startswith("images/") and "/" not in p[7:] and Path(p).suffix.lower() in PHOTO_EXTS:
+                refs.add(p)
+        elif isinstance(node, list):
+            for x in node:
+                walk(x)
+        elif isinstance(node, dict):
+            for v in node.values():
+                walk(v)
+
+    for f in content_files():
+        if f.exists():
+            try:
+                walk(json.loads(f.read_text(encoding="utf-8")))
+            except ValueError:
+                pass        # content.py reports unreadable files
+    return refs
+
+
+def stale_refs():
+    """{missing ref: the one same-named photo that exists}. Happens when a photo was saved under one extension
+    and later stored under another before the listing caught up. Never guesses: no match or two matches = skipped."""
+    out = {}
+    for ref in sorted(photo_refs()):
+        if (ROOT / ref).is_file():
+            continue
+        stem = Path(ref).stem
+        found = [q for q in sorted(IMAGES.iterdir()) if q.is_file() and q.stem == stem and q.suffix.lower() in PHOTO_EXTS]
+        if len(found) == 1:
+            out[ref] = "images/" + found[0].name
+    return out
+
+
 def rewrite_refs(mapping):
     """Replace old photo names with new ones in the content files (builds, alts, extras)."""
-    files = sorted((ROOT / "content" / "builds").glob("*.json")) + CONTENT_FILES
+    files = content_files()
 
     def walk(node):
         if isinstance(node, str):
@@ -158,7 +212,9 @@ def main(argv):
 
         try:
             cleaned = clean_image(img)
-            target = path if img.format == "JPEG" else unique_target(path)
+            # A JPEG (including an iPhone MPO) is cleaned in place and keeps its name: the admin has already
+            # written that name into the listing, and renaming .jpeg to .jpg broke the listing (A-100).
+            target = path if img.format in JPEG_FORMATS else unique_target(path)
             tmp = target.with_name(target.name + ".tmp")
             cleaned.save(tmp, "JPEG", quality=QUALITY, optimize=True, progressive=True, icc_profile=None)
             os.replace(tmp, target)
@@ -176,8 +232,15 @@ def main(argv):
     if renames:
         rewrite_refs(renames)
 
+    repairs = stale_refs()
+    if repairs:
+        if not check_only:
+            rewrite_refs(repairs)
+        for old, new in repairs.items():
+            done.append("reference {} -> {} ({})".format(old, new, "would be repaired" if check_only else "repaired: that photo is stored under the second name"))
+
     for line in done:
-        print(("Would clean " if check_only else "Cleaned ") + line)
+        print(line if line.startswith("reference ") else ("Would clean " if check_only else "Cleaned ") + line)
     if not done and not problems:
         print("All {} photos are already clean.".format(sum(1 for p in IMAGES.iterdir() if p.suffix.lower() in PHOTO_EXTS)))
     if problems:

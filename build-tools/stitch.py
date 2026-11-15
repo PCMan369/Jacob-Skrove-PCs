@@ -128,6 +128,7 @@ def build_seo_block(site_url: str, page_filename: str, title: str, description: 
             '  "@context": "https://schema.org",\n'
             '  "@type": "ComputerStore",\n'
             '  "name": "Jacob Skrove PCs",\n'
+            '  "alternateName": "North Bridge PCs",\n'
             '  "description": "Gaming PC sales and custom builds in Southern Oregon.",\n'
             f'  "url": "{site_url}/",\n'
             '  "address": {\n'

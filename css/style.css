@@ -1496,6 +1496,29 @@ strong {
   grid-column: 1 / -1;
 }
 
+/* Custom-build form on Contact (A-100): the three dropdowns share one row from 900px.
+   Below that the form is two columns and the last dropdown gets a full row; at 640px and
+   under the form is one column (rules in the media query below). */
+.form-grid-thirds .form-group.third-end {
+  grid-column: 1 / -1;
+}
+
+@media (min-width: 900px) {
+  .form-grid-thirds {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .form-grid-thirds > .form-group {
+    grid-column: span 3;
+  }
+  .form-grid-thirds > .form-group.third,
+  .form-grid-thirds > .form-group.third-end {
+    grid-column: span 2;
+  }
+  .form-grid-thirds > .form-group.full {
+    grid-column: 1 / -1;
+  }
+}
+
 .form-label {
   font-size: 0.85rem;
   font-weight: 600;
