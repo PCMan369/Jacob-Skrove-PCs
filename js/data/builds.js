@@ -49,6 +49,31 @@ const builds = [
         "WiFi and Bluetooth dongle"
       ]
     },
+    "performance": {
+      "isEstimate": true,
+      "items": [
+        {
+          "game": "Fortnite",
+          "fps": "~85fps",
+          "settings": "1080p High"
+        },
+        {
+          "game": "Minecraft",
+          "fps": "~160fps+",
+          "settings": "1080p High"
+        },
+        {
+          "game": "Marvel Rivals",
+          "fps": "~55fps",
+          "settings": "1080p High"
+        },
+        {
+          "game": "Cyberpunk 2077",
+          "fps": "~40fps",
+          "settings": "1080p High"
+        }
+      ]
+    },
     "media": {
       "images": [
         "images/img0511.jpg",
