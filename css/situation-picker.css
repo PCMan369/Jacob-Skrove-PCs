@@ -62,9 +62,16 @@
   .situation-option .btn {
     grid-column: 1;
     grid-row: auto;
-    justify-self: start;
+    justify-self: stretch;   /* A-106: full width, so the five topic buttons match */
     margin-top: 0.75rem;
     /* min-width: 12.5rem from the rule above stays: same button width on phones
        (Visual Redesign M2, A-034; it was reset to 0, so buttons sized to their text). */
   }
+}
+
+/* Where a form lands when a topic button scrolls to it (A-107): just under the sticky header, with a
+   little room above the card. Without this the card's top edge went to the very top of the screen and
+   the header covered the form's title. */
+.situation-form-panel {
+  scroll-margin-top: calc(var(--header-h) + 0.75rem);
 }

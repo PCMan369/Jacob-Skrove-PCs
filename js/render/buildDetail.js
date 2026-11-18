@@ -193,6 +193,7 @@ function initBuildDetailPage() {
 
   // ---- Inquiry form (available) or sold notice ----
   var formHtml;
+  var soldNoticeHtml = '';
   if (isAvailable) {
     var pageUrl = window.location.origin + window.location.pathname + '?id=' + encodeURIComponent(build.id);
     var nextUrl = pageUrl + '&sent=true';
@@ -230,9 +231,11 @@ function initBuildDetailPage() {
         '</form>' +
       '</div>';
   } else {
-    formHtml =
+    // A-104: the notice sits right under the price (see Assemble) and has no "Sold" pill of its own:
+    // the pill beside the title already says it.
+    formHtml = '';
+    soldNoticeHtml =
       '<div class="sold-notice">' +
-        '<span class="badge badge-sold" style="margin-bottom:0.5rem;">Sold</span>' +
         '<p>This system has been sold. You can see what\'s available or start a custom build below.</p>' +
       '</div>';
   }
@@ -277,7 +280,7 @@ function initBuildDetailPage() {
           '<div class="listing-price-wrap">' + priceHtml + '</div>' +
           '<div class="listing-pickup-note">Pickup in person near Grants Pass</div>' +
         '</div>' +
-        specsHtml + conditionHtml + perfHtml + formHtml +
+        soldNoticeHtml + specsHtml + conditionHtml + perfHtml + formHtml +
       '</div>' +
     '</div>' +
     trustHtml + ctaHtml;

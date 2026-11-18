@@ -429,7 +429,8 @@
 .sold-notice p {
   font-size: 0.92rem;
   color: var(--muted);
-  margin-top: 0.4rem;
+  margin: 0;
+  text-wrap: pretty; /* no one-word last line (A-105) */
 }
 
 /* ---- Responsive ---- */

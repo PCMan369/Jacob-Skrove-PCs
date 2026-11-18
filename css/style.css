@@ -216,7 +216,7 @@ strong {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: var(--header-h);
+  min-height: var(--header-h); /* was height: if the brand ever needs more room the header grows instead of clipping its top (A-102) */
   padding: 0 1.5rem;
   max-width: 1180px;
   margin: 0 auto;
@@ -227,6 +227,14 @@ strong {
   flex-direction: column;
   gap: 0;
   text-decoration: none;
+}
+
+/* Very narrow phones (A-102): the tagline needs 242px and 24px side padding leaves only 228px at 320px,
+   so it wrapped and the brand block (about 71px) overflowed the 68px header. 16px sides give 244px: one line. */
+@media (max-width: 340px) {
+  .header-inner {
+    padding: 0 1rem;
+  }
 }
 
 .brand-name {
@@ -1880,6 +1888,21 @@ strong {
   .btn-group .btn {
     width: 100%;
     max-width: 300px;
+  }
+
+  /* Phone buttons (A-106): every button is at least 44px tall (tap size), and a pair of buttons
+     (.btn-row: home empty state, 404, custom-build) stacks at one shared width. */
+  .btn {
+    min-height: 44px;
+  }
+
+  .btn-lg {
+    padding-block: 0.78rem;   /* a bordered (secondary) large button is 45px at 0.85rem; this makes every button exactly 44px */
+  }
+
+  .btn-row {
+    flex-direction: column;
+    align-items: stretch;
   }
 }
 
