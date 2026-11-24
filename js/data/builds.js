@@ -76,17 +76,17 @@ const builds = [
     },
     "media": {
       "images": [
-        "images/img0668.jpeg",
-        "images/img0666.jpeg",
-        "images/img0665-1.jpeg",
         "images/img0667.jpeg",
+        "images/img0665.jpeg",
+        "images/img0666.jpeg",
+        "images/img0668.jpeg",
         "images/img0670.jpg",
         "images/img0669.jpeg",
         "images/img0671.jpg"
       ],
       "videos": []
     },
-    "condition": "Good condition Everything is used except for the case and CPU cooler, which are new.",
+    "condition": "Good condition. Everything is used except for the case and CPU cooler, which are new.",
     "testingNotes": "",
     "listedDate": "2026-11-23",
     "notes": ""
