@@ -16,6 +16,82 @@
 
 const builds = [
   {
+    "id": "nov26-02",
+    "title": "Ryzen 7 5700G / RTX 3070",
+    "status": "available",
+    "price": "$850",
+    "eventId": null,
+    "eventPrice": null,
+    "summary": "Capable gaming PC ready for 1440p and 1080p.",
+    "components": {
+      "cpu": {
+        "model": "Ryzen 7 5700G"
+      },
+      "gpu": {
+        "model": "RTX 3070"
+      },
+      "motherboard": {
+        "model": "B550 mATX"
+      },
+      "ram": {
+        "model": "2x8GB 3733MHz"
+      },
+      "storage": {
+        "model": "1TB NVMe SSD"
+      },
+      "psu": {
+        "model": "80+ Gold 850w"
+      },
+      "case": {
+        "model": "Black Okinos Aqua Uno"
+      },
+      "accessories": [
+        "WiFi antenna"
+      ]
+    },
+    "performance": {
+      "isEstimate": true,
+      "items": [
+        {
+          "game": "Fortnite",
+          "fps": "~120fps",
+          "settings": "1440p High"
+        },
+        {
+          "game": "Minecraft",
+          "fps": "~200fps+",
+          "settings": "1440p High"
+        },
+        {
+          "game": "Marvel Rivals",
+          "fps": "~75fps",
+          "settings": "1440p Medium"
+        },
+        {
+          "game": "Cyberpunk 2077",
+          "fps": "~65fps",
+          "settings": "1440p Medium"
+        }
+      ]
+    },
+    "media": {
+      "images": [
+        "images/img0668.jpeg",
+        "images/img0666.jpeg",
+        "images/img0665-1.jpeg",
+        "images/img0667.jpeg",
+        "images/img0670.jpg",
+        "images/img0669.jpeg",
+        "images/img0671.jpg"
+      ],
+      "videos": []
+    },
+    "condition": "Good condition Everything is used except for the case and CPU cooler, which are new.",
+    "testingNotes": "",
+    "listedDate": "2026-11-23",
+    "notes": ""
+  },
+  {
     "id": "nov26-01",
     "title": "Ryzen 5 2600X / GTX 1660 TI",
     "status": "available",

@@ -15,6 +15,34 @@
 
 const currentBuilds = [
   {
+    "src": "images/img0668.jpeg",
+    "alt": "Ryzen 7 5700G / RTX 3070, photo 1"
+  },
+  {
+    "src": "images/img0666.jpeg",
+    "alt": "Ryzen 7 5700G / RTX 3070, photo 2"
+  },
+  {
+    "src": "images/img0665-1.jpeg",
+    "alt": "Ryzen 7 5700G / RTX 3070, photo 3"
+  },
+  {
+    "src": "images/img0667.jpeg",
+    "alt": "Ryzen 7 5700G / RTX 3070, photo 4"
+  },
+  {
+    "src": "images/img0670.jpg",
+    "alt": "Ryzen 7 5700G / RTX 3070, photo 5"
+  },
+  {
+    "src": "images/img0669.jpeg",
+    "alt": "Ryzen 7 5700G / RTX 3070, photo 6"
+  },
+  {
+    "src": "images/img0671.jpg",
+    "alt": "Ryzen 7 5700G / RTX 3070, photo 7"
+  },
+  {
     "src": "images/img0511.jpg",
     "alt": "Ryzen 5 2600X / GTX 1660 TI, photo 1"
   },
