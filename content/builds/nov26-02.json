@@ -8,7 +8,10 @@
     "/images/img0668.jpeg",
     "/images/img0666.jpeg",
     "/images/img0665-1.jpeg",
-    "/images/img0667.jpeg"
+    "/images/img0667.jpeg",
+    "/images/img0670.jpg",
+    "/images/img0669.jpeg",
+    "/images/img0671.jpg"
   ],
   "components": {
     "cpu": "Ryzen 7 5700G",
@@ -23,6 +26,30 @@
     ]
   },
   "performance": {
-    "isEstimate": true
-  }
+    "isEstimate": true,
+    "items": [
+      {
+        "game": "Fortnite",
+        "fps": "~120fps",
+        "settings": "1440p High"
+      },
+      {
+        "game": "Minecraft",
+        "fps": "~200fps+",
+        "settings": "1440p High"
+      },
+      {
+        "game": "Marvel Rivals",
+        "fps": "~75fps",
+        "settings": "1440p Medium"
+      },
+      {
+        "game": "Cyberpunk 2077",
+        "fps": "~65fps",
+        "settings": "1440p Medium"
+      }
+    ]
+  },
+  "price": 850,
+  "condition": "Everything is used except for the case and CPU cooler."
 }
